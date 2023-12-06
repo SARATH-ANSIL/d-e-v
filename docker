@@ -1,0 +1,35 @@
+$ sudo apt-get remove docker docker-engine docker.io
+$ sudo apt-get update
+$ sudo apt install docker.io
+$ sudo snap install docker
+$ docker --version
+$ sudo docker run hello-world
+$ sudo docker images
+$ sudo docker ps -a
+$ sudo docker ps
+$ sudo docker pull chef/chef:16.0.100
+$ sudo docker run -it chef/chef:16.0.100
+*************CHEF*****************
+sudo -i
+wget https://packages.chef.io/files/stable/chef-workstation/22.6.973/ubuntu/20.04/chef-workstation_22.6.973-1_amd64.deb
+sudo apt install ./chef-workstation_22.6.973-1_amd64.deb
+chef -v
+ manage.chef.io
+Login using account--->go to admin---->starter
+unzip '/home/sarath/Downloads/chef-starter.zip' 
+ cd chef-repo
+ supermarket.chef.io
+download learn_chef_httpd
+tar -xvf '/home/sarath/Downloads/learn_chef_httpd.tgz'
+cd /root/chef-repo/learn_chef_httpd/recipes
+cat default.rb
+mv /root/chef-repo/learn_chef_httpd /root/chef-repo/cookbooks
+cd /root/chef-repo/cookbooks
+knife cookbook upload learn_chef_httpd
+ifconfig
+knife bootstrap 192.168.56.102 --ssh-user root --ssh-password edureka --node-name chefNode
+knife node list
+chef-client
+
+
+
