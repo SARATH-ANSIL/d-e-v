@@ -20,6 +20,7 @@ unzip '/home/sarath/Downloads/chef-starter.zip'
  cd chef-repo
  supermarket.chef.io
 download learn_chef_httpd
+https://supermarket.chef.io/cookbooks/learn_chef_httpd
 tar -xvf '/home/sarath/Downloads/learn_chef_httpd.tgz'
 cd /root/chef-repo/learn_chef_httpd/recipes
 cat default.rb
