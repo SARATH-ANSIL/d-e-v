@@ -31,6 +31,9 @@ ifconfig
 knife bootstrap 192.168.56.102 --ssh-user root --ssh-password edureka --node-name chefNode
 knife node list
 chef-client
-
+*********************jenkins*******************
+docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins
+docker ps
+docker logs bdb
 
 
