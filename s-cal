@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleCalculate = () => {
+    try {
+      setResult(eval(input).toString());
+    } catch (error) {
+      setResult('Error');
+    }
+  };
+
+  const handleClear = () => {
+    setInput('');
+    setResult('');
+  };
+
+  return (
+    <div>
+      <h2>Simple Calculator</h2>
+      <input
+        type="text"
+        value={input}
+        onChange={handleInputChange}
+        placeholder="Enter an expression"
+      />
+      <br />
+      <button onClick={handleCalculate}>Calculate</button>
+      <button onClick={handleClear}>Clear</button>
+      <br />
+      <div>
+        <strong>Result:</strong> {result}
+      </div>
+    </div>
+  );
+}
+
+export default App;
