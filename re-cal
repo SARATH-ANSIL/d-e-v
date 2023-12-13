@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleInput = (value) => {
+    setInput(input + value);
+  };
+
+  const handleResult = () => {
+    try {
+      setResult(eval(input).toString());
+    } catch (error) {
+      setResult('Error');
+    }
+  };
+
+  const handleClear = () => {
+    setInput('');
+    setResult('');
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Enter the number"
+        onChange={(e) => setInput(e.target.value)}
+        value={input}
+      />
+      <div>
+        <button onClick={() => handleInput('1')}>1</button>
+        <button onClick={() => handleInput('2')}>2</button>
+        <button onClick={() => handleInput('3')}>3</button>
+        <button onClick={() => handleInput('+')}>+</button>
+      </div>
+      <div>
+        <button onClick={() => handleInput('4')}>4</button>
+        <button onClick={() => handleInput('5')}>5</button>
+        <button onClick={() => handleInput('6')}>6</button>
+        <button onClick={() => handleInput('-')}>-</button>
+      </div>
+      <div>
+        <button onClick={() => handleInput('7')}>7</button>
+        <button onClick={() => handleInput('8')}>8</button>
+        <button onClick={() => handleInput('9')}>9</button>
+        <button onClick={() => handleInput('*')}>*</button>
+      </div>
+      <div>
+        <button onClick={() => handleInput('0')}>0</button>
+        <button onClick={() => handleInput('/')}>/</button>
+        <button onClick={handleResult}>=</button>
+        <button onClick={handleClear}>C</button>
+      </div>
+      <div>{result}</div>
+    </div>
+  );
+}
+
+export default App;
