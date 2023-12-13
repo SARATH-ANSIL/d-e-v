@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <title>Shopping Store</title>
+  </head>
+  <style>
+    h1{
+      text-align: center;
+    }
+img
+{
+  
+  height:350px;
+  width:300px;
+  border-radius: 10%;
+  
+  
+}
+.container1
+
+{
+  float:left;
+  padding:30px;
+}
+button 
+{
+  padding:10px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgb(12, 12, 12);
+  color:azure;
+
+}
+button:hover{
+  background-color: rgb(126, 124, 124);
+  color:rgb(0, 0, 0);
+}
+ul{
+  display: block;
+  list-style-type:none;
+  margin:0;
+  padding:0;
+  text-decoration: none;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+  float:left;
+
+  padding-top:20px;
+  margin-left:50px;
+  padding-left:125px;
+  padding-right:125px;
+  padding-bottom: 20px;
+  font-size:15px;
+  color:black;
+  
+}
+a:hover 
+{
+  background-color: black;
+  color:rgb(255, 255, 255);
+}
+textarea{
+  height:200px;
+  width:300px;
+}
+  </style>
+ 
+  <body>
+    
+    <ul>
+      <li><a href="default.asp">Home</a></li>
+      <li><a href="news.asp">News</a></li>
+      <li><a href="contact.asp">Contact</a></li>
+      <li><a href="about.asp">About</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>WELCOME TO ANIMO - STORE </h1>
+    <div class="wh">
+    <div class="card">
+        <div class="container1">
+          <img src="https://d1jsd7iv7h2l7v.cloudfront.net/wp-content/uploads/2022/04/21527.jpg">
+          <h3>Price $10.00</h3>
+          <p>Its a fine cotton material</p>
+          <button onclick="incrementAndDisplay()">Add to cart</button>
+          <p id="counter"></p>
+        </div>
+        <div class="container1">
+          <img src="https://d1jsd7iv7h2l7v.cloudfront.net/wp-content/uploads/2022/04/21527.jpg">
+          <h3>Price $10.00</h3>
+          <p>Its a fine cotton material</p>
+          <button>Add to cart</button>
+        </div>
+        <div class="container1">
+          <img src="https://d1jsd7iv7h2l7v.cloudfront.net/wp-content/uploads/2022/04/21527.jpg">
+          <h3>Price $10.00</h3>
+          <p>Its a fine cotton material</p>
+          <button>Add to cart</button>
+        </div>
+        <div class="container1">
+          <img src="https://d1jsd7iv7h2l7v.cloudfront.net/wp-content/uploads/2022/04/21527.jpg">
+          <h3>Price $10.00</h3>
+          <p>Its a fine cotton material</p>
+          <button>Add to cart</button>
+        </div>
+    </div>
+    </div>
+    <script>
+      var i = 0;
+
+      function incrementAndDisplay() {
+        i = i + 1;
+        document.getElementById('counter').innerText = i; 
+      }
+      function post()
+      {
+        document.getElementById('po').innerText="Blog posted successfully";
+        
+      }
+      function fact()
+      {
+        var n=parseInt(document.getElementById("f").value);
+        var a=0;
+        var next;
+        var b=1;
+        var fib= a+','+b;
+        for(var i=2;i<n;i++)
+        {
+          next=a+b;
+          fib += ','+next;
+          a=b;
+          b=next;
+        }
+         document.getElementById("m").innerText = fib;
+        
+      }
+      function area()
+      {
+        var shape = document.getElementById("s").value;
+        var result;
+        switch(shape)
+        {
+            case "rectangle":
+                var he=document.getElementById("h").value;
+                var be = document.getElementById("b").value;
+                result=he*be;
+                break;
+            case "circle":
+               var he = document.getElementById("h").value;
+               result = Math.PI*he*he;
+               break;
+        }
+        document.getElementById("n").innerText=result;
+
+      }
+
+    </script>
+    <textarea placeholder="Write your blog and publish"></textarea>
+    <button onclick="post()">Post</button>
+    <p id="po">Hello</p>
+    <input type="text" id="f" placeholder="Enter the number">
+    <button onclick="fact()">Factorial</button>
+    <p id="m"></p>
+    <br>
+    <input type="text" id="s" placeholder="Enter the shape">
+    <input type="text" id="h" placeholder="Enter the h">
+    <input type="text" id="b" placeholder="Enter the b">
+    <button onclick="area()">Factorial</button>
+    <p id="n"></p>
+    
+  </body>
+</html>
