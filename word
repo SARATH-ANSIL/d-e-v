@@ -1,0 +1,28 @@
+import React,{ useState } from 'react';
+import './App.css';
+function App() {
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState('');
+  const HandleOutput = () => {
+    try {
+      setResult(input.replace(/\s/g, ''));
+    }
+    catch (error) {
+      setResult('Error');
+    }
+  };
+
+  return (
+    <div className="App">
+      <form>
+        <input type="text" onChange={(e) => setInput(e.target.value)} value={input} />
+        <button onClick={HandleOutput}>submit</button>
+      </form>
+      <div>
+        {result}
+      </div>
+    </div>
+  );
+}
+
+export default App;
